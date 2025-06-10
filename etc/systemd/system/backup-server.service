@@ -1,0 +1,21 @@
+[Unit]
+Description=Teamspeak Server Backup service
+After=network.target
+
+[Service]
+WorkingDirectory=~/
+User=replaceme
+Group=replaceme
+Type=oneshot
+
+
+ExecStart=~/backup-script.sh
+
+
+TimeoutStartSec=120
+TimeoutStopSec=60
+RestartSec=60
+Restart=no
+
+[Install]
+WantedBy=default.target
